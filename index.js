@@ -1,0 +1,34 @@
+var app = new Vue({
+	el:"#todolist",
+	data:{
+		//添加文本框的数据
+		addInp:"",
+		listItems:[
+           {
+           	  title:"我想这周把VUE学会",
+           	  iscompleted:false,
+           	  isclick:false
+           },
+           {
+           	  title:"我想去学习武术",
+           	  iscompleted:true,
+           	  isclick:false
+           }
+		]
+	},
+	methods:{
+		add:function(){
+           this.listItems.push({title:this.addInp,iscompleted:false,isclick:true});
+           this.addInp="";
+		},
+		del:function(index){
+			this.listItems.splice(index,1);
+		}
+		dbk:function(item){
+			item.isclick:true;
+		}
+		xiugai:function(){
+			this.isclick:false;
+		}
+	}
+})
