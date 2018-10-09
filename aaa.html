@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .on{
+        color:red;
+      }
+	</style>
+</head>
+
+<body>
+	<script src="vue.min.js"></script>
+    <div id="tabs">
+      <ul>
+        <li :class="{on:isselect==1}" @click = tab(1)>1</li>
+        <li :class="{on:isselect==2}" @click = tab(2)>2</li>
+        <li :class="{on:isselect==3}" @click = tab(3)>3</li>
+      </ul>
+      <div>
+        <p v-show="isselect==1">111</p>
+        <p v-show="isselect==2">222</p>
+        <p v-show="isselect==3">333</p>
+      </div>
+    </div>
+    <script>
+      var tab = new Vue({
+      	el:"#tabs",
+      	data:{
+          isselect:2
+      	},
+      	methods:{
+      		tab:function(a){
+                this.isselect = a
+      		}
+      	}
+      })
+    </script>
+
+</body>
+</html>
